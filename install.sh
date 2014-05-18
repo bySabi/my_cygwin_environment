@@ -28,8 +28,6 @@ main() {
 
 install_apt_cyg_package_needed() {
 	echo ">> Install apt-cyg package needed"
-echo $(pwd)
-ls -l .
 		source conf/apt-cyg-package-needed
 	exit_func $?
 }
