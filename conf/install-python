@@ -1,4 +1,10 @@
 #!/bin/bash
 
-apt-cyg update 1>/dev/null
-apt-cyg install python python-crypto python-paramiko python-setuptools
+packages="
+	python,
+	python-crypto,
+	python-paramiko,
+	python-setuptools
+"
+/Cygwin.exe -q -P ${packages}
+
