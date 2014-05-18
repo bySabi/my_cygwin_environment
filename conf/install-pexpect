@@ -4,7 +4,7 @@
 source $HOME/.bash_profile
 
 # virtualenv cleanup
-if deactivate 2>&1 >/dev/null; then true; fi
+if deactivate 1>/dev/null 2>&1; then true; fi
 rmvirtualenv set_sshd
 
 mkvirtualenv set_sshd
