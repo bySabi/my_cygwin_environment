@@ -1,0 +1,7 @@
+#!/bin/bash
+
+pip install virtualenv
+pip install virtualenvwrapper
+
+source set-bash_profile-python_virtualenv
+source $HOME/.bash_profile

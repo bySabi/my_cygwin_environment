@@ -18,6 +18,7 @@ main() {
 	install_apt_cyg
 	install_base_package
 	install_python
+	set_python_virtualenv
 	install_pexpect
 #	set_sshd
 #	set_bash
@@ -49,6 +50,12 @@ install_base_package() {
 install_python() {
 	echo ">> Install python and cia´s"
 		source conf/install-python
+	exit_func $?
+}
+
+set_python_virtualenv() {
+	echo ">> Set python virtual environment"
+		source conf/set-python-virtualenv
 	exit_func $?
 }
 
