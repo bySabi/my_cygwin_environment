@@ -20,7 +20,6 @@ main() {
 #	install_python
 #	set_python_virtualenv
 	set_sshd
-	install_pexpect
 #	set_sshd
 #	set_bash
 #	install_git_crypt
@@ -63,11 +62,6 @@ set_python_virtualenv() {
 install_set_sshd() {
 	echo ">> Set sshd"
 		source conf/set-sshd
-	exit_func $?
-}
-install_pexpect() {
-	echo ">> Install pexpect"
-		source conf/install-pexpect
 	exit_func $?
 }
 
