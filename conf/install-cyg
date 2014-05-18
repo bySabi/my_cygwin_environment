@@ -1,0 +1,4 @@
+#!/bin/bash
+
+curl -L -o $(cygpath -w /bin/apt-cyg) https://raw.githubusercontent.com/transcode-open/apt-cyg/master/apt-cyg && chmod +x /bin/apt-cyg
+
