@@ -1,7 +1,10 @@
 #!/bin/bash
 
-packages="
-				wget
-"
+apt-cyg install openssh
+source conf/install-pexpect
 
-/Cygwin.exe -q -P ${packages}
+# load virtualenv settings
+source $HOME/.bash_profile
+
+workon set_sshd
+python conf/set-sshd.py

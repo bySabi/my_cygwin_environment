@@ -14,11 +14,12 @@ script_dir_parent=${PWD##*/}
 main() {
 	setup_script ${script_dir_parent}
 
-	install_apt_cyg_package_needed
-	install_apt_cyg
-	install_base_package
-	install_python
-	set_python_virtualenv
+#	install_apt_cyg_package_needed
+#	install_apt_cyg
+#	install_base_package
+#	install_python
+#	set_python_virtualenv
+	set_sshd
 	install_pexpect
 #	set_sshd
 #	set_bash
@@ -59,6 +60,11 @@ set_python_virtualenv() {
 	exit_func $?
 }
 
+install_set_sshd() {
+	echo ">> Set sshd"
+		source conf/set-sshd
+	exit_func $?
+}
 install_pexpect() {
 	echo ">> Install pexpect"
 		source conf/install-pexpect
