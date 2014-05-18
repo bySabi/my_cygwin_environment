@@ -8,7 +8,6 @@ if deactivate 1>/dev/null 2>&1; then true; fi
 rmvirtualenv set_sshd
 
 mkvirtualenv set_sshd
-set -x
 workon set_sshd
 
 pip install pexpect
