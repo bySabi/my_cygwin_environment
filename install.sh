@@ -14,7 +14,10 @@ script_dir_parent=${PWD##*/}
 main() {
 	setup_script ${script_dir_parent}
 
-	install_packages
+	install_apt_cyg_package_needed
+	install_apt_cyg
+	install_python
+#	set_sshd
 #	set_bash
 #	install_git_crypt
 #	set_gitconfig
@@ -23,15 +26,27 @@ main() {
 #	set_git_crypt_keys_dir
 }
 
-install_git() {
-	echo ">> Install git"
-		/Cygwin.exe -q -P git 1>/dev/null
+install_apt_cyg_package_needed() {
+	echo ">> Install apt-cyg package needed"
+		source conf/apt-cyg-package-needed
 	exit_func $?
 }
 
-install_packages() {
-	echo ">> install packages"
-		source conf/package-needed
+install_apt_cyg() {
+	echo ">> Install apt-cyg"
+		source conf/install-apt-cyg
+	exit_func $?
+}
+
+install_python() {
+	echo ">> Install python and cia´s"
+		source conf/install-python
+	exit_func $?
+}
+
+set_sshd() {
+	echo ">> Setup ssh server"
+		source conf/set-sshd
 	exit_func $?
 }
 
@@ -68,6 +83,12 @@ set_ssh_keys_dir() {
 set_git_crypt_keys_dir() {
 	echo ">> Setup \".git-crypt\" dir for user: ${USER}"
 		source conf/set-git-crypt-dir
+	exit_func $?
+}
+
+install_git() {
+	echo ">> Install git"
+		source conf/install-git
 	exit_func $?
 }
 

@@ -1,8 +1,0 @@
-#!/bin/bash
-
-packages="
-				wget,
-				openssh
-"
-
-/Cygwin.exe -q -P ${packages}
