@@ -1,12 +1,11 @@
 #!/bin/bash
 
-
-
 if ! which wget > /dev/null; then
-	packages="
-		${packages},
-		wget
-	"
+	if [ -z "${packages}" ]; then
+		packages="wget"
+	else
+		packages+=",wget"
+	fi
 fi
 
 if [ -n "${packages}" ]; then
