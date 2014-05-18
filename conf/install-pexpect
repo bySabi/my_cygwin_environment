@@ -1,5 +1,6 @@
 #!/bin/bash
 
 mkvirtualenv set_sshd
+workon set_sshd
 pip install pexpect
 
