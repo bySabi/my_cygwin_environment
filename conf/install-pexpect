@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# load virtualenv settings
+source $HOME/.bash_profile
+
 # virtualenv cleanup
 deactivate
 rmvirtualenv set_sshd
