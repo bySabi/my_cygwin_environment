@@ -1,0 +1,4 @@
+#!/bin/bash
+
+wget https://github.com/bySabi/git-crypt/raw/build/build/git-crypt -O /usr/local/bin/git-crypt
+chmod a+x /usr/local/bin/git-crypt
