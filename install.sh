@@ -17,6 +17,7 @@ main() {
 	install_apt_cyg_package_needed
 	install_apt_cyg
 	install_python
+	install_pexpect
 #	set_sshd
 #	set_bash
 #	install_git_crypt
@@ -41,6 +42,12 @@ install_apt_cyg() {
 install_python() {
 	echo ">> Install python and cia´s"
 		source conf/install-python
+	exit_func $?
+}
+
+install_pexpect() {
+	echo ">> Install pexpect"
+		source conf/install-pexpect
 	exit_func $?
 }
 

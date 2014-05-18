@@ -1,5 +1,7 @@
 #!/bin/bash
 
+
+
 if ! which wget > /dev/null; then
 	packages="
 		${packages},
@@ -7,5 +9,6 @@ if ! which wget > /dev/null; then
 	"
 fi
 
-[ -z ${packages} ] || /Cygwin.exe -q -P ${packages}
-
+if [ -n ${packages} ]; then
+	/Cygwin.exe -q -P ${packages}
+fi
