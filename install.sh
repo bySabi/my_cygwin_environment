@@ -16,6 +16,7 @@ main() {
 
 	install_apt_cyg_package_needed
 	install_apt_cyg
+	install_base_package
 	install_python
 	install_pexpect
 #	set_sshd
@@ -36,6 +37,12 @@ install_apt_cyg_package_needed() {
 install_apt_cyg() {
 	echo ">> Install apt-cyg"
 		source conf/install-apt-cyg
+	exit_func $?
+}
+
+install_base_package() {
+	echo ">> Install base package"
+		source conf/install-base-package
 	exit_func $?
 }
 

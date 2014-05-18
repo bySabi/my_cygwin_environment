@@ -1,0 +1,4 @@
+#!/bin/bash
+
+apt-cyg update
+apt-cyg install make gcc-core gcc-g++

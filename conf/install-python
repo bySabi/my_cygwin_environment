@@ -1,10 +1,4 @@
 #!/bin/bash
 
-packages="
-	python,
-	python-crypto,
-	python-paramiko,
-	python-setuptools
-"
-/Cygwin.exe -q -P ${packages}
-
+apt-cyg install python python-crypto python-paramiko python-setuptools
+easy_install pip
