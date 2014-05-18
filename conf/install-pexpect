@@ -1,6 +1,11 @@
 #!/bin/bash
 
+# virtualenv cleanup
+deactivate
+rmvirtualenv set_sshd
+
 mkvirtualenv set_sshd
 workon set_sshd
+
 pip install pexpect
 
