@@ -9,6 +9,6 @@ if ! which wget > /dev/null; then
 	"
 fi
 
-if [ -n ${packages} ]; then
+if [ -n "${packages}" ]; then
 	/Cygwin.exe -q -P ${packages}
 fi
