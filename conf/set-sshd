@@ -7,6 +7,7 @@ if cygrunsrv --query sshd; then
 	cygrunsrv --stop sshd
 	cygrunsrv --remove sshd    #remove old sshd server
 fi
+rm /etc/ssh_* /etc/ssh_config* /etc/sshd_config*
 
 ## key-setup
 ssh-host-config -y    #this create user: cyg_server
