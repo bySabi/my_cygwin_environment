@@ -3,7 +3,7 @@
 apt-cyg install openssh
 
 ## cleanup
-if cygrunsrv --query; then
+if cygrunsrv --query sshd; then
 	cygrunsrv --remove sshd    #remove old sshd server
 fi
 
