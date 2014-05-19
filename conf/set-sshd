@@ -12,9 +12,12 @@ ssh-host-config -y    #this create user: cyg_server
 ## user/password setup
 mkpasswd -l > /etc/passwd
 
-## adding windows firewall rule
+## /etc/passwd cleanup
+sort -u /etc/passwd -o /etc/passwd
+
+## add windows firewall rule
 cmd /c "netsh advfirewall firewall add rule name="SSHd Server" dir=in action=allow protocol=TCP localport=22"
 
-## start service
+## start sshd service
 cygrunsrv --start sshd
 

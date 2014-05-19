@@ -1,6 +1,5 @@
 #!/bin/bash
 set -e
-set +x
 
 project_dir="my_cygwin_environment"
 
@@ -14,19 +13,11 @@ script_dir_parent=${PWD##*/}
 main() {
 	setup_script ${script_dir_parent}
 
-#	install_apt_cyg_package_needed
-#	install_apt_cyg
-#	install_base_package
-#	install_python
-#	set_python_virtualenv
+	install_apt_cyg_package_needed
+	install_apt_cyg
+	install_base_package
 	set_sshd
-#	set_sshd
-#	set_bash
-#	install_git_crypt
-#	set_gitconfig
-#	set_develop_dir
-#	set_ssh_keys_dir
-#	set_git_crypt_keys_dir
+	install_python
 }
 
 install_apt_cyg_package_needed() {
@@ -47,57 +38,15 @@ install_base_package() {
 	exit_func $?
 }
 
-install_python() {
-	echo ">> Install python and cia´s"
-		source conf/install-python
-	exit_func $?
-}
-
-set_python_virtualenv() {
-	echo ">> Set python virtual environment"
-		source conf/set-python-virtualenv
-	exit_func $?
-}
-
 set_sshd() {
 	echo ">> Setup ssh server"
 		source conf/set-sshd
 	exit_func $?
 }
 
-set_bashrc() {
-	echo ">> Set \".bashrc\" for user: ${USER}"
-		source conf/set-bashrc
-	exit_func $?
-}
-
-install_git_crypt() {
-	echo ">> Install git-crypt"
-		sudo bash conf/install-git-crypt
-	exit_func $?
-}
-
-set_gitconfig() {
-	echo ">> Set \".gitconfig\" for user: ${USER}"
-		install -m 644 conf/gitconfig ${HOME}/.gitconfig
-	exit_func $?
-}
-
-set_develop_dir() {
-	echo ">> Create \"develop\" dir for user: ${USER}"
-		mkdir -p ${HOME}/develop
-	exit_func $?	
-}
-
-set_ssh_keys_dir() {
-	echo ">> Setup \".ssh\" dir for user: ${USER}"
-		source conf/set-ssh-dir
-	exit_func $?
-}
-
-set_git_crypt_keys_dir() {
-	echo ">> Setup \".git-crypt\" dir for user: ${USER}"
-		source conf/set-git-crypt-dir
+install_python() {
+	echo ">> Install python and cia´s"
+		source conf/install-python
 	exit_func $?
 }
 
@@ -118,7 +67,7 @@ setup_script() {
 			git clone https://github.com/bySabi/${project_dir}.git
 		exit_func $?
 		cd ${project_dir}
-		chmod +x install.sh && ./install.sh
+		chmod +x "$0" && ./"$0" "$*"
 		exit 0
 	fi
 }
