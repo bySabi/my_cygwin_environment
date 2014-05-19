@@ -59,12 +59,6 @@ set_python_virtualenv() {
 	exit_func $?
 }
 
-install_set_sshd() {
-	echo ">> Set sshd"
-		source conf/set-sshd
-	exit_func $?
-}
-
 set_sshd() {
 	echo ">> Setup ssh server"
 		source conf/set-sshd

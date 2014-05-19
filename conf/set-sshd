@@ -1,10 +1,8 @@
 #!/bin/bash
 
 apt-cyg install openssh
-source conf/install-pexpect
 
-# load virtualenv settings
-source $HOME/.bash_profile
+cygrunsrv --remove sshd    #remove old sshd server
+ssh-host-config -y    #this create user: cyg_server
+cygrunsrv --start sshd
 
-workon set_sshd
-python conf/set-sshd.py

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+apt-cyg install openssh
+source conf/install-pexpect
+
+# load virtualenv settings
+source $HOME/.bash_profile
+
+workon set_sshd
+python conf/set-sshd.py
