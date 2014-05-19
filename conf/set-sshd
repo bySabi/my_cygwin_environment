@@ -3,7 +3,7 @@
 apt-cyg install openssh
 
 ## cleanup
-cygrunsrv --remove sshd    #remove old sshd server
+if cygrunsrv --remove sshd; then true; fi    #remove old sshd server
 if rm /etc/ssh_* /etc/ssh_config /etc/sshd_config; then true; fi
 
 ssh-host-config -y    #this create user: cyg_server
