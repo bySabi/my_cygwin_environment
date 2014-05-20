@@ -16,9 +16,9 @@ main() {
 	set_python_virtualenv
 #	set_bash
 #	install_git_crypt
-#	set_gitconfig
-#	set_develop_dir
-#	set_ssh_keys_dir
+	set_gitconfig
+	set_develop_dir
+	set_ssh_keys_dir
 #	set_git_crypt_keys_dir
 }
 
