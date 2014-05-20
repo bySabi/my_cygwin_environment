@@ -1,0 +1,7 @@
+#!/bin/bash
+
+apt-cyg install \
+	rsync \
+	mc \
+	git
+

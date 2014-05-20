@@ -17,6 +17,7 @@ main() {
 	install_apt_cyg
 	install_base_package
 	set_sshd
+	install_additonal_package
 	install_python
 }
 
@@ -41,6 +42,12 @@ install_base_package() {
 set_sshd() {
 	echo ">> Setup ssh server"
 		source conf/set-sshd
+	exit_func $?
+}
+
+install_additonal_package() {
+	echo ">> Install addtional package"
+		source conf/install-additonal-package
 	exit_func $?
 }
 

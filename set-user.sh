@@ -20,7 +20,6 @@ main() {
 	set_ssh_keys_dir
 #	set_git_crypt_keys_dir
 	set_python_virtualenv
-
 	create_user_home_shortcut
 }
 
