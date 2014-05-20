@@ -20,7 +20,6 @@ main() {
 	set_ssh_keys_dir
 #	set_git_crypt_keys_dir
 	set_python_virtualenv
-	install_additonal_package
 	create_user_home_shortcut
 }
 
@@ -63,12 +62,6 @@ set_git_crypt_keys_dir() {
 set_python_virtualenv() {
 	echo ">> Set python virtual environment"
 		source conf/set-python-virtualenv
-	exit_func $?
-}
-
-install_additonal_package() {
-	echo ">> Install addtional package"
-		source conf/install-additonal-package
 	exit_func $?
 }
 
