@@ -5,7 +5,6 @@ if ! grep "## bySabi-git_prompt" $HOME/.bash_profile >/dev/null; then
 
 ## bySabi-git_prompt
 PS1=$PS1'$(__git_ps1 "\[\e[0;32m\](%s) \[\e[0m\]")'
-
 EOF
 fi
 
