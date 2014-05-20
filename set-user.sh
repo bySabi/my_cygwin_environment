@@ -66,6 +66,7 @@ set_git_crypt_keys_dir() {
 
 install_git() {
 	echo ">> Install git"
+		echo "git not found"
 		exit 1
 	exit_func $?
 }
