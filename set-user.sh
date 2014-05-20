@@ -13,19 +13,13 @@ script_dir_parent=${PWD##*/}
 main() {
 	setup_script ${script_dir_parent}
 
-	set_python_virtualenv
 #	set_bash
 #	install_git_crypt
 	set_gitconfig
 	set_develop_dir
 	set_ssh_keys_dir
 #	set_git_crypt_keys_dir
-}
-
-set_python_virtualenv() {
-	echo ">> Set python virtual environment"
-		source conf/set-python-virtualenv
-	exit_func $?
+	set_python_virtualenv
 }
 
 set_bashrc() {
@@ -61,6 +55,12 @@ set_ssh_keys_dir() {
 set_git_crypt_keys_dir() {
 	echo ">> Setup \".git-crypt\" dir for user: ${USER}"
 		source conf/set-git-crypt-dir
+	exit_func $?
+}
+
+set_python_virtualenv() {
+	echo ">> Set python virtual environment"
+		source conf/set-python-virtualenv
 	exit_func $?
 }
 

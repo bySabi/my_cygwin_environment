@@ -4,4 +4,4 @@ pip install virtualenv
 pip install virtualenvwrapper
 
 source conf/set-bash_profile-python_virtualenv
-echo "Reload terminal for used: workon mkvirtualenv commands"
+echo -e "\e[00;5mReload terminal for used:\e[00m \"workon mkvirtualenv\" commands"
