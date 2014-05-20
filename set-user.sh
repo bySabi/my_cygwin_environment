@@ -20,6 +20,8 @@ main() {
 	set_ssh_keys_dir
 #	set_git_crypt_keys_dir
 	set_python_virtualenv
+
+	create_user_home_shortcut
 }
 
 set_bashrc() {
@@ -64,6 +66,12 @@ set_python_virtualenv() {
 	exit_func $?
 }
 
+create_user_home_shortcut() {
+	echo ">> Create \"$HOMEPATH\" shortcut on Desktop"
+		source conf/create-user-home-shortcut
+	exit_func $?
+}
+
 install_git() {
 	echo ">> Install git"
 		echo "git not found"
@@ -82,7 +90,7 @@ setup_script() {
 			git clone https://github.com/bySabi/${project_dir}.git
 		exit_func $?
 		cd ${project_dir}
-		chmod +x $(basename "$0") &&  ./$(basename "$0") "$*"
+		chmod +x $(basename "$0") && ./$(basename "$0") "$*"
 		exit 0
 	fi
 }
