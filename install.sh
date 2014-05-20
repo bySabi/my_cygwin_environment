@@ -67,7 +67,7 @@ setup_script() {
 			git clone https://github.com/bySabi/${project_dir}.git
 		exit_func $?
 		cd ${project_dir}
-		chmod +x $(basename "$0") &&  ./$(basename "$0") "$*"
+		chmod +x $(basename "$0") && ./$(basename "$0") "$*"
 		exit 0
 	fi
 }
