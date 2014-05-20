@@ -13,9 +13,9 @@ script_dir_parent=${PWD##*/}
 main() {
 	setup_script ${script_dir_parent}
 
-	install_apt_cyg_package_needed
-	install_apt_cyg
-	install_base_package
+#	install_apt_cyg_package_needed
+#	install_apt_cyg
+#	install_base_package
 	set_sshd
 	install_python
 }

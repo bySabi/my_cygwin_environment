@@ -3,9 +3,8 @@
 apt-cyg install openssh
 
 ## stop sshd process
-#pid=$(ps -ef | grep sshd | awk '{print $2}')
-#[ ${pid} ] && kill -9 ${pid}
-kill -9 $(ps -ef | grep sshd | awk '{print $2}')
+pid=$(ps -ef | grep sshd | awk '{print $2}') 
+[ ${pid} ] && kill -9 ${pid}
 
 ## cleanup
 if cygrunsrv --query sshd; then
