@@ -1,4 +1,3 @@
 #!/bin/bash
 
-cmd /c "conf\shortcut.bat" $(cygpath -w $HOME) "$USERPROFILE\Desktop\$USERNAME_home.lnk" "$USERNAME home"
-
+cmd /c "conf\shortcut.bat" $(cygpath -w $HOME) "$USERPROFILE\Desktop\\${USERNAME}_home.lnk" "$USERNAME home"
