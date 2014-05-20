@@ -67,7 +67,7 @@ set_python_virtualenv() {
 }
 
 create_user_home_shortcut() {
-	echo ">> Create \"$HOMEPATH\" shortcut on Desktop"
+	echo ">> Create \"$HOME\" shortcut on Desktop"
 		source conf/create-user-home-shortcut
 	exit_func $?
 }
