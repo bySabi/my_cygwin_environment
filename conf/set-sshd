@@ -3,15 +3,17 @@
 apt-cyg install openssh
 
 ## stop sshd process
-pid=$(ps -ef | grep sshd | awk '{print $2}')
-[ ${pid} ] && kill -9 ${pid}
+#pid=$(ps -ef | grep sshd | awk '{print $2}')
+#[ ${pid} ] && kill -9 ${pid}
+kill -9 $(ps -ef | grep sshd | awk '{print $2}')
 
 ## cleanup
 if cygrunsrv --query sshd; then
 	cygrunsrv --stop sshd
 	cygrunsrv --remove sshd    #remove old sshd server
 fi
-if rm /etc/ssh_* /etc/ssh_config* /etc/sshd_config*; then true; fi
+rm /etc/ssh_* /etc/ssh_config* /etc/sshd_config*
+#if rm /etc/ssh_* /etc/ssh_config* /etc/sshd_config*; then true; fi
 
 ## key-setup
 ssh-host-config -y    #this create user: cyg_server
